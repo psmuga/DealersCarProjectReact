@@ -1,0 +1,10 @@
+.scrollable {
+    overflow-y:auto !important;
+    height: 100%;
+}
+
+.movies-list {
+    height: calc(100vh - 100px);
+    flex:1;
+    overflow: hidden;
+}
