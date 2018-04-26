@@ -26,7 +26,7 @@ class Login extends Component {
             .then((response) => {
                 setToken(response.data.token)
                 this.setState({error: false, loginEnabled: true});
-                this.props.history.push('actors')
+                this.props.history.push('cars')
 
             })
             .catch((error) => {
