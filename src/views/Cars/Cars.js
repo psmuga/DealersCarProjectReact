@@ -7,7 +7,7 @@ import axiosInstance from "../../services/axios";
 import moment from "moment";
 import {withRouter} from "react-router-dom";
 
-class Actors extends Component {
+class Cars extends Component {
 
     state = {
         carsList: [],
@@ -108,7 +108,7 @@ class Actors extends Component {
     }
 }
 
-Actors.propTypes = {};
-Actors.defaultProps = {};
+Cars.propTypes = {};
+Cars.defaultProps = {};
 
-export default withRouter(Actors);
+export default withRouter(Cars);

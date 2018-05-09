@@ -93,18 +93,42 @@ class CarForm extends Component {
                                         <FormControl type="text" value={car.brand} name="brand" placeholder="Car brand" onChange={this.handleUserInput}/>
                                     </FormGroup>
                                 </Col>
-                                {/* <Col xs={12}>
+                                 <Col xs={12}>
                                     <FormGroup>
-                                        <ControlLabel>Height</ControlLabel>
-                                        <FormControl type="number" value={car.height} name="height" placeholder="Height" onChange={this.handleUserInput}/>
+                                        <ControlLabel>Cost</ControlLabel>
+                                        <FormControl type="number" value={car.cost} name="cost" placeholder="Cost" onChange={this.handleUserInput}/>
                                     </FormGroup>
                                 </Col>
                                 <Col xs={12}>
                                     <FormGroup>
-                                        <ControlLabel>Birthday</ControlLabel>
-                                        <FormControl type="date" value={car.birthday} name="birthday" placeholder="Birthday" onChange={this.handleUserInput}/>
+                                        <ControlLabel>Engine</ControlLabel>
+                                        <FormControl type="text" value={car.engineType} name="engineType" placeholder="Engine type" onChange={this.handleUserInput}/>
                                     </FormGroup>
-                                </Col> */}
+                                </Col>
+                                <Col xs={12}>
+                                    <FormGroup>
+                                        <ControlLabel>Engine capacity</ControlLabel>
+                                        <FormControl type="number" value={car.engineCapacity} name="engineCapacity" placeholder="Engine capacity" onChange={this.handleUserInput}/>
+                                    </FormGroup>
+                                </Col>
+                                <Col xs={12}>
+                                    <FormGroup>
+                                        <ControlLabel>Seats</ControlLabel>
+                                        <FormControl type="number" value={car.seats} name="seats" placeholder="Seats" onChange={this.handleUserInput}/>
+                                    </FormGroup>
+                                </Col>
+                                <Col xs={12}>
+                                    <FormGroup>
+                                        <ControlLabel>Vin number</ControlLabel>
+                                        <FormControl type="number" value={car.vim} name="vim" placeholder="Vin number" onChange={this.handleUserInput}/>
+                                    </FormGroup>
+                                </Col>
+                                <Col xs={12}>
+                                    <FormGroup>
+                                        <ControlLabel>Production</ControlLabel>
+                                        <FormControl type="date" value={car.production} name="production" placeholder="Year of production" onChange={this.handleUserInput}/>
+                                    </FormGroup>
+                                </Col>  
                             </Row>
 
                             <Row>
