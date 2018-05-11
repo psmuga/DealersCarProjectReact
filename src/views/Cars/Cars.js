@@ -15,11 +15,9 @@ class Cars extends Component {
             id: "",
             model: "",
             brand: "",
-            vin: "",
             production: "",
             engineType: "",
             engineCapacity:"",
-            seats:"",
             cost:""
         }
     }

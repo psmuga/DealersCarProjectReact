@@ -24,7 +24,7 @@ class CarsList extends Component {
                 active={car.id === this.state.selectedCar.id}
                 onClick={this.selectCar(car)}
                 key={car.id}>
-                {car.brand}
+                {car.brand +" " + car.model}
             </ListGroupItem>
         )
 

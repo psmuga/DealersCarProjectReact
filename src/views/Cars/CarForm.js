@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
-import {Button, Col, ControlLabel, FormControl, FormGroup, Glyphicon, HelpBlock, Panel, Row} from "react-bootstrap";
+import {Button, Col, ControlLabel, FormControl, FormGroup, Glyphicon, HelpBlock, Panel, Row,InputGroup} from "react-bootstrap";
 import PropTypes from 'prop-types';
+
 
 class CarForm extends Component {
 
+  
     resetForm = () => {
         let car = this.state.car
         for(let model of Object.keys(car)){
@@ -56,12 +58,12 @@ class CarForm extends Component {
     handleUserInput = (e) => {
         // Works fine for text files (like textfield or textarea)
         // In case of radio buttons you need to handle checked property!
-        const model = e.target.model;
+        const name = e.target.name;
         const value = e.target.value;
 
         // Get previos object from state - we can only set root variables!
         let car = this.state.car;
-        car[model] = value
+        car[name] = value;
 
         this.setState({car});
     }
@@ -79,6 +81,12 @@ class CarForm extends Component {
 
                             <Row>
                                 <Col xs={12}>
+                                    <FormGroup >
+                                        <ControlLabel>Brand</ControlLabel>
+                                        <FormControl type="text" value={car.brand} name="brand" placeholder="Car brand" onChange={this.handleUserInput}/>
+                                    </FormGroup>
+                                </Col>
+                                <Col xs={12}>
 
                                     <FormGroup validationState={!this.state.modelError ? null : 'error'}>
                                         <ControlLabel>Model</ControlLabel>
@@ -87,40 +95,33 @@ class CarForm extends Component {
                                         <HelpBlock>{this.state.modelError}</HelpBlock>
                                     </FormGroup>
                                 </Col>
+                               
                                 <Col xs={12}>
-                                    <FormGroup >
-                                        <ControlLabel>Brand</ControlLabel>
-                                        <FormControl type="text" value={car.brand} name="brand" placeholder="Car brand" onChange={this.handleUserInput}/>
-                                    </FormGroup>
-                                </Col>
-                                 <Col xs={12}>
                                     <FormGroup>
                                         <ControlLabel>Cost</ControlLabel>
-                                        <FormControl type="number" value={car.cost} name="cost" placeholder="Cost" onChange={this.handleUserInput}/>
+                                        <InputGroup>
+                                            <InputGroup.Addon>€</InputGroup.Addon>
+                                            <FormControl type="number" value={car.cost} name="cost" placeholder="Cost" onChange={this.handleUserInput}/>
+                                            <InputGroup.Addon>.000</InputGroup.Addon>
+                                        </InputGroup>
                                     </FormGroup>
                                 </Col>
+
                                 <Col xs={12}>
+                                    <ControlLabel>Engine</ControlLabel>
                                     <FormGroup>
-                                        <ControlLabel>Engine</ControlLabel>
-                                        <FormControl type="text" value={car.engineType} name="engineType" placeholder="Engine type" onChange={this.handleUserInput}/>
+                                        <FormControl componentClass="select" value={car.engineType} name="engineType" onChange={this.handleUserInput}>
+                                            <option value="Benzine">Benzine</option>
+                                            <option value="Diesel">Diesel</option>
+                                            <option value="LPG">LPG</option>
+                                            <option value="Benzine + LPG">Benzine + LPG</option>
+                                        </FormControl>
                                     </FormGroup>
                                 </Col>
                                 <Col xs={12}>
                                     <FormGroup>
                                         <ControlLabel>Engine capacity</ControlLabel>
-                                        <FormControl type="number" value={car.engineCapacity} name="engineCapacity" placeholder="Engine capacity" onChange={this.handleUserInput}/>
-                                    </FormGroup>
-                                </Col>
-                                <Col xs={12}>
-                                    <FormGroup>
-                                        <ControlLabel>Seats</ControlLabel>
-                                        <FormControl type="number" value={car.seats} name="seats" placeholder="Seats" onChange={this.handleUserInput}/>
-                                    </FormGroup>
-                                </Col>
-                                <Col xs={12}>
-                                    <FormGroup>
-                                        <ControlLabel>Vin number</ControlLabel>
-                                        <FormControl type="number" value={car.vim} name="vim" placeholder="Vin number" onChange={this.handleUserInput}/>
+                                        <FormControl type="number" value={car.engineCapacity} name="engineCapacity" step="0.1" placeholder="Engine capacity" onChange={this.handleUserInput}/>
                                     </FormGroup>
                                 </Col>
                                 <Col xs={12}>
