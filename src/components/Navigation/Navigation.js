@@ -22,6 +22,7 @@ class Navigation extends Component {
                         <Nav>
                             <NavDropdown eventKey={1} title="Databases" id="database-nav">
                                 <MenuItem eventKey={1.1} href="/cars">Cars</MenuItem>
+                                <MenuItem eventKey={1.2} href="/dealers">Dealers</MenuItem>
                             </NavDropdown>
                         </Nav>
 
